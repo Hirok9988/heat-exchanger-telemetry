@@ -1,3 +1,4 @@
+import os
 import serial
 import threading
 import time
@@ -135,4 +136,8 @@ if __name__ == '__main__':
     # Run the Flask API server
     print("Starting telemetry server on port 5000...")
     # use_reloader=False prevents double-firing of background daemon threads
-    app.run(host='0.0.0.0', port=5000, use_reloader=False) 
+    app.run(
+        host='0.0.0.0',
+        port=int(os.environ.get("PORT", 5000)),
+        use_reloader=False
+    ) 
