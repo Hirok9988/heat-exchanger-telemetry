@@ -5,7 +5,7 @@ import LiveData from "../components/LiveData";
 import Graphs from "../components/Graphs";
 import Thermodynamics from "../components/Thermodynamics";
 import ThermoAnalysis from "../components/ThermoAnalysis";
-import Team from "../components/Team";
+// import Team from "../components/Team";
 import EngineeringTeam from "../components/EngineeringTeam";
 import Footer from "../components/Footer";
 

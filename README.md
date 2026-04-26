@@ -44,3 +44,29 @@ The backend API will run on `http://localhost:5000`.
 - **Idkarul Islam** – 222310002026
 - **Kunjal Gogoi** – 222310002028
 - **Prayash Bora** – 222310002035
+
+## Running the Project Locally
+
+1. Start Backend:
+   python server.py
+
+2. Open in browser:
+   http://localhost:5000/data
+   (You should see JSON output)
+
+3. Start Frontend:
+   npm install
+   npm run dev
+
+4. Open:
+   http://localhost:3000
+
+## Notes
+
+* If ESP32 is NOT connected:
+  The backend will run in offline mode and data may remain constant.
+
+* If ESP32 is connected:
+  Update SERIAL_PORT in server.py to match your system (e.g., COM3, COM5).
+
+* Ensure backend is running before opening frontend.

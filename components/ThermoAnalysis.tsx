@@ -23,11 +23,10 @@ export default function ThermoAnalysis() {
   const [dataHistory, setDataHistory] = useState<ThermoPoint[]>([]);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
 
     const fetchGraphData = async () => {
       try {
-        const res = await fetch("http://localhost:5000/data");
+        const res = await fetch("https://YOUR_REAL_BACKEND_URL/data");
         if (!res.ok) return;
         
         const jsonData = await res.json();
@@ -44,13 +43,13 @@ export default function ThermoAnalysis() {
           if (newData.length > 50) return newData.slice(-50);
           return newData;
         });
-      } catch (err) {
+      } catch {
         // Silently catch server unavailability
       }
     };
 
     fetchGraphData();
-    interval = setInterval(fetchGraphData, 1000);
+    const interval = setInterval(fetchGraphData, 1000);
 
     return () => clearInterval(interval);
   }, []);

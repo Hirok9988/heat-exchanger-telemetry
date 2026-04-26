@@ -21,34 +21,42 @@ export default function LiveData() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
-    
+
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:5000/data");
+        const res = await fetch("https://YOUR_REAL_BACKEND_URL/data");
         if (!res.ok) throw new Error("API failed");
         
         const jsonData: SensorData = await res.json();
         setData(jsonData);
         setError(false);
-      } catch (err) {
+      } catch {
         // Handle failure silently to the overall UI layout, gracefully reporting offline
         setError(true);
       }
     };
 
     fetchData(); // Initial execution
-    interval = setInterval(fetchData, 1000); // 1-second fixed telemetry tick
+    const interval = setInterval(fetchData, 1000); // 1-second fixed telemetry tick
 
     return () => clearInterval(interval);
   }, []);
 
+  const noData = data && (data.flow === 0 || data.Q === 0);
+
   return (
     <section className="px-6 md:px-20 py-12 border-b border-white/10 bg-[#0A0A0C]">
       <div className="w-full max-w-6xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-8 text-white">
-          Real-Time Sensor Telemetry
-        </h2>
+        <div className="relative mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-wide text-white">
+            Real-Time Sensor Telemetry
+          </h2>
+          {noData && (
+            <p className="absolute -bottom-6 left-0 text-red-500 text-sm mt-2 font-mono">
+              No live data (ESP32 not connected)
+            </p>
+          )}
+        </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           <DataCard label="Flow Rate (L/min)" value={data?.flow} unit="L/M" error={error} />

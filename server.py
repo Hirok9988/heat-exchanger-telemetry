@@ -38,10 +38,19 @@ def read_serial_data():
         try:
             if ser is None or not ser.is_open:
                 print(f"Attempting to connect to ESP32 on {SERIAL_PORT}...")
-                ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
-                print(f"Successfully connected to {SERIAL_PORT}")
+                try:
+                    ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
+                    print(f"Successfully connected to {SERIAL_PORT}")
+                except:
+                    ser = None
+                    print(f"[Warning] Serial port {SERIAL_PORT} unavailable. Offline mode active.")
+                    time.sleep(2)
             
-            line = ser.readline().decode('utf-8').strip()
+            if ser is not None:
+                line = ser.readline().decode('utf-8').strip()
+            else:
+                line = ""
+                time.sleep(1)
             
             if line:
                 # Expected format: time,Th_in,Th_out,Tc_in,Tc_out,flow,Q
