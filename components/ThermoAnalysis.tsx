@@ -26,7 +26,7 @@ export default function ThermoAnalysis() {
 
     const fetchGraphData = async () => {
       try {
-        const res = await fetch("https://YOUR_REAL_BACKEND_URL/data");
+        const res = await fetch("https://heat-exchanger-telemetry.onrender.com/data");
         if (!res.ok) return;
         
         const jsonData = await res.json();

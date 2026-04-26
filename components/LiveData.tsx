@@ -24,7 +24,7 @@ export default function LiveData() {
 
     const fetchData = async () => {
       try {
-        const res = await fetch("https://YOUR_REAL_BACKEND_URL/data");
+        const res = await fetch("https://heat-exchanger-telemetry.onrender.com/data");
         if (!res.ok) throw new Error("API failed");
         
         const jsonData: SensorData = await res.json();
