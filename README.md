@@ -16,6 +16,57 @@ A robust full-stack IoT telemetry application designed to monitor and analyze re
   - Number of Transfer Units (NTU)
   - Transient Stability Indicator
 
+## 🔌 Hardware Connections (VERY IMPORTANT)
+
+### Temperature Sensors Placement
+
+This system uses **4 temperature sensors**:
+
+- **T1 → Hot Fluid Inlet (Tin, hot)**
+  - Place at the **entry of hot fluid into heat exchanger**
+
+- **T2 → Hot Fluid Outlet (Tout, hot)**
+  - Place at the **exit of hot fluid**
+
+- **T3 → Cold Fluid Inlet (Tin, cold)**
+  - Place at the **entry of cold fluid**
+
+- **T4 → Cold Fluid Outlet (Tout, cold)**
+  - Place at the **exit of cold fluid**
+
+---
+
+### 📌 Summary Table
+
+| Sensor | Location | Description |
+|------|--------|------------|
+| T1 | Hot Inlet | Hot fluid entering |
+| T2 | Hot Outlet | Hot fluid leaving |
+| T3 | Cold Inlet | Cold fluid entering |
+| T4 | Cold Outlet | Cold fluid leaving |
+
+---
+
+### ⚠️ Important Notes
+
+- Incorrect placement will give **wrong heat transfer calculations**
+- Ensure proper thermal contact with pipes
+- Avoid loose sensors (causes unstable readings)
+
+---
+
+## 📊 What the System Measures
+
+- Flow Rate (L/min)
+- Heat Transfer (Q)
+- Hot Side Temperatures (T1, T2)
+- Cold Side Temperatures (T3, T4)
+- NTU (Number of Transfer Units)
+- LMTD / GMTD
+- Stability Profile
+
+---
+
 ## Setup Instructions
 
 ### 1. Run the Frontend
