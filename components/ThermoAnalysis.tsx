@@ -72,8 +72,18 @@ export default function ThermoAnalysis() {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={dataHistory}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
-                  <XAxis dataKey="time" hide />
-                  <YAxis domain={['auto', 'auto']} stroke="#666" tick={{fill: '#666', fontSize: 12}} width={40} />
+                  <XAxis 
+                    dataKey="time" 
+                    tick={{ fill: "#a1a1aa", fontSize: 12 }}
+                    label={{ value: "Time (s)", position: "insideBottom", offset: -5, fill: "#a1a1aa" }}
+                  />
+                  <YAxis 
+                    domain={['auto', 'auto']} 
+                    stroke="#666" 
+                    width={40} 
+                    tick={{ fill: "#a1a1aa", fontSize: 12 }}
+                    label={{ value: "Stability Index", angle: -90, position: "insideLeft", fill: "#a1a1aa" }}
+                  />
                   <Tooltip 
                     contentStyle={{ backgroundColor: '#0A0A0C', border: '1px solid #333' }}
                     itemStyle={{ color: '#fff' }}
@@ -101,8 +111,18 @@ export default function ThermoAnalysis() {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={dataHistory}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
-                  <XAxis dataKey="time" hide />
-                  <YAxis domain={['auto', 'auto']} stroke="#666" tick={{fill: '#666', fontSize: 12}} width={40} />
+                  <XAxis 
+                    dataKey="time" 
+                    tick={{ fill: "#a1a1aa", fontSize: 12 }}
+                    label={{ value: "Time (s)", position: "insideBottom", offset: -5, fill: "#a1a1aa" }}
+                  />
+                  <YAxis 
+                    domain={['auto', 'auto']} 
+                    stroke="#666" 
+                    width={40} 
+                    tick={{ fill: "#a1a1aa", fontSize: 12 }}
+                    label={{ value: "h (W/m²K)", angle: -90, position: "insideLeft", fill: "#a1a1aa" }}
+                  />
                   <Tooltip 
                     contentStyle={{ backgroundColor: '#0A0A0C', border: '1px solid #333' }}
                     itemStyle={{ color: '#fff' }}
@@ -130,8 +150,18 @@ export default function ThermoAnalysis() {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={dataHistory}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
-                  <XAxis dataKey="time" hide />
-                  <YAxis domain={['auto', 'auto']} stroke="#666" tick={{fill: '#666', fontSize: 12}} width={40} />
+                  <XAxis 
+                    dataKey="time" 
+                    tick={{ fill: "#a1a1aa", fontSize: 12 }}
+                    label={{ value: "Time (s)", position: "insideBottom", offset: -5, fill: "#a1a1aa" }}
+                  />
+                  <YAxis 
+                    domain={['auto', 'auto']} 
+                    stroke="#666" 
+                    width={40} 
+                    tick={{ fill: "#a1a1aa", fontSize: 12 }}
+                    label={{ value: "NTU", angle: -90, position: "insideLeft", fill: "#a1a1aa" }}
+                  />
                   <Tooltip 
                     contentStyle={{ backgroundColor: '#0A0A0C', border: '1px solid #333' }}
                     itemStyle={{ color: '#fff' }}
@@ -159,8 +189,18 @@ export default function ThermoAnalysis() {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={dataHistory}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
-                  <XAxis dataKey="time" hide />
-                  <YAxis domain={['auto', 'auto']} stroke="#666" tick={{fill: '#666', fontSize: 12}} width={40} />
+                  <XAxis 
+                    dataKey="time" 
+                    tick={{ fill: "#a1a1aa", fontSize: 12 }}
+                    label={{ value: "Time (s)", position: "insideBottom", offset: -5, fill: "#a1a1aa" }}
+                  />
+                  <YAxis 
+                    domain={['auto', 'auto']} 
+                    stroke="#666" 
+                    width={40} 
+                    tick={{ fill: "#a1a1aa", fontSize: 12 }}
+                    label={{ value: "GMTD (°C)", angle: -90, position: "insideLeft", fill: "#a1a1aa" }}
+                  />
                   <Tooltip 
                     contentStyle={{ backgroundColor: '#0A0A0C', border: '1px solid #333' }}
                     itemStyle={{ color: '#fff' }}

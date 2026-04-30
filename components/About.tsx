@@ -15,7 +15,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
           <div className="space-y-6 text-zinc-400 text-lg leading-relaxed font-light">
             <p>
-              The primary objective of this engineering project is to construct, monitor, and analyze a high-efficiency shell-and-tube heat exchanger. By integrating a sophisticated IoT telemetry array, we bridge the gap between physical thermodynamics and real-time digital intelligence.
+              The primary objective of this engineering project is to construct, monitor, and analyze a high-efficiency plate heat exchanger. By integrating a sophisticated IoT telemetry array, we bridge the gap between physical thermodynamics and real-time digital intelligence.
             </p>
             <p>
               Traditional heat exchangers operate as black boxes. Our system fundamentally changes this paradigm by constantly sampling inlet and outlet temperatures alongside fluid mass flow rates, translating raw analog signals into deterministic operational insights.
