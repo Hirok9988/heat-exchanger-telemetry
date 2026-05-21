@@ -24,7 +24,7 @@ export default function LiveGraphs() {
 
     const fetchGraphData = async () => {
       try {
-        const res = await fetch("https://heat-exchanger-telemetry.onrender.com/data");
+        const res = await fetch("http://127.0.0.1:5000/data");
         if (!res.ok) return;
         
         const jsonData = await res.json();

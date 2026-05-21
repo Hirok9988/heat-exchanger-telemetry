@@ -14,6 +14,7 @@ type SensorData = {
   h: number;
   ntu: number;
   stability: number;
+  esp32_connected: boolean;
 };
 
 export default function LiveData() {
@@ -24,7 +25,7 @@ export default function LiveData() {
 
     const fetchData = async () => {
       try {
-        const res = await fetch("https://heat-exchanger-telemetry.onrender.com/data");
+        const res = await fetch("http://127.0.0.1:5000/data");
         if (!res.ok) throw new Error("API failed");
         
         const jsonData: SensorData = await res.json();
@@ -42,7 +43,7 @@ export default function LiveData() {
     return () => clearInterval(interval);
   }, []);
 
-  const noData = data && (data.flow === 0 || data.Q === 0);
+  const noData = data && !data.esp32_connected;
 
   return (
     <section className="px-6 md:px-20 py-12 border-b border-white/10 bg-[#0A0A0C]">
